@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "repro-10338"
+name = "repro-10620"
 version = "0.1.0"
 description = ""
 authors = ["Uriel Mandujano <uriel@prefect.io>"]
 readme = "README.md"
-packages = [{include = "repro_10338"}]
+packages = [{include = "repro_10620"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-prefect = "^2.13.1"
+prefect = "2.11.3"
 
 
 [tool.poetry.group.dev.dependencies]

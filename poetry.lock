@@ -36,24 +36,24 @@ tz = ["python-dateutil"]
 
 [[package]]
 name = "anyio"
-version = "3.7.1"
+version = "4.0.0"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "anyio-3.7.1-py3-none-any.whl", hash = "sha256:91dee416e570e92c64041bd18b900d1d6fa78dff7048769ce5ac5ddad004fbb5"},
-    {file = "anyio-3.7.1.tar.gz", hash = "sha256:44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"},
+    {file = "anyio-4.0.0-py3-none-any.whl", hash = "sha256:cfdb2b588b9fc25ede96d8db56ed50848b0b649dca3dd1df0b11f683bb9e0b5f"},
+    {file = "anyio-4.0.0.tar.gz", hash = "sha256:f7ed51751b2c2add651e5747c891b47e26d2a21be5d32d9311dfe9692f3e5d7a"},
 ]
 
 [package.dependencies]
-exceptiongroup = {version = "*", markers = "python_version < \"3.11\""}
+exceptiongroup = {version = ">=1.0.2", markers = "python_version < \"3.11\""}
 idna = ">=2.8"
 sniffio = ">=1.1"
 
 [package.extras]
-doc = ["Sphinx", "packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme (>=1.2.2)", "sphinxcontrib-jquery"]
-test = ["anyio[trio]", "coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "mock (>=4)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
-trio = ["trio (<0.22)"]
+doc = ["Sphinx (>=7)", "packaging", "sphinx-autodoc-typehints (>=1.2.0)"]
+test = ["anyio[trio]", "coverage[toml] (>=7)", "hypothesis (>=4.0)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
+trio = ["trio (>=0.22)"]
 
 [[package]]
 name = "apprise"
@@ -552,17 +552,16 @@ test = ["pytest (>=6)"]
 
 [[package]]
 name = "fastapi"
-version = "0.103.1"
+version = "0.103.0"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "fastapi-0.103.1-py3-none-any.whl", hash = "sha256:5e5f17e826dbd9e9b5a5145976c5cd90bcaa61f2bf9a69aca423f2bcebe44d83"},
-    {file = "fastapi-0.103.1.tar.gz", hash = "sha256:345844e6a82062f06a096684196aaf96c1198b25c06b72c1311b882aa2d8a35d"},
+    {file = "fastapi-0.103.0-py3-none-any.whl", hash = "sha256:61ab72c6c281205dd0cbaccf503e829a37e0be108d965ac223779a8479243665"},
+    {file = "fastapi-0.103.0.tar.gz", hash = "sha256:4166732f5ddf61c33e9fa4664f73780872511e0598d4d5434b1816dc1e6d9421"},
 ]
 
 [package.dependencies]
-anyio = ">=3.7.1,<4.0.0"
 pydantic = ">=1.7.4,<1.8 || >1.8,<1.8.1 || >1.8.1,<2.0.0 || >2.0.0,<2.0.1 || >2.0.1,<2.1.0 || >2.1.0,<3.0.0"
 starlette = ">=0.27.0,<0.28.0"
 typing-extensions = ">=4.5.0"
@@ -607,43 +606,27 @@ tqdm = ["tqdm"]
 
 [[package]]
 name = "google-auth"
-version = "2.17.3"
+version = "2.23.0"
 description = "Google Authentication Library"
 optional = false
-python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*"
+python-versions = ">=3.7"
 files = [
-    {file = "google-auth-2.17.3.tar.gz", hash = "sha256:ce311e2bc58b130fddf316df57c9b3943c2a7b4f6ec31de9663a9333e4064efc"},
-    {file = "google_auth-2.17.3-py2.py3-none-any.whl", hash = "sha256:f586b274d3eb7bd932ea424b1c702a30e0393a2e2bc4ca3eae8263ffd8be229f"},
+    {file = "google-auth-2.23.0.tar.gz", hash = "sha256:753a26312e6f1eaeec20bc6f2644a10926697da93446e1f8e24d6d32d45a922a"},
+    {file = "google_auth-2.23.0-py2.py3-none-any.whl", hash = "sha256:2cec41407bd1e207f5b802638e32bb837df968bb5c05f413d0fa526fac4cf7a7"},
 ]
 
 [package.dependencies]
 cachetools = ">=2.0.0,<6.0"
 pyasn1-modules = ">=0.2.1"
-rsa = {version = ">=3.1.4,<5", markers = "python_version >= \"3.6\""}
-six = ">=1.9.0"
+rsa = ">=3.1.4,<5"
+urllib3 = "<2.0"
 
 [package.extras]
-aiohttp = ["aiohttp (>=3.6.2,<4.0.0dev)", "requests (>=2.20.0,<3.0.0dev)"]
+aiohttp = ["aiohttp (>=3.6.2,<4.0.0.dev0)", "requests (>=2.20.0,<3.0.0.dev0)"]
 enterprise-cert = ["cryptography (==36.0.2)", "pyopenssl (==22.0.0)"]
 pyopenssl = ["cryptography (>=38.0.3)", "pyopenssl (>=20.0.0)"]
 reauth = ["pyu2f (>=0.1.5)"]
-requests = ["requests (>=2.20.0,<3.0.0dev)"]
-
-[[package]]
-name = "graphviz"
-version = "0.20.1"
-description = "Simple Python interface for Graphviz"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "graphviz-0.20.1-py3-none-any.whl", hash = "sha256:587c58a223b51611c0cf461132da386edd896a029524ca61a1462b880bf97977"},
-    {file = "graphviz-0.20.1.zip", hash = "sha256:8c58f14adaa3b947daf26c19bc1e98c4e0702cdc31cf99153e6f06904d492bf8"},
-]
-
-[package.extras]
-dev = ["flake8", "pep8-naming", "tox (>=3)", "twine", "wheel"]
-docs = ["sphinx (>=5)", "sphinx-autodoc-typehints", "sphinx-rtd-theme"]
-test = ["coverage", "mock (>=4)", "pytest (>=7)", "pytest-cov", "pytest-mock (>=3)"]
+requests = ["requests (>=2.20.0,<3.0.0.dev0)"]
 
 [[package]]
 name = "greenlet"
@@ -880,13 +863,13 @@ files = [
 
 [[package]]
 name = "jsonschema"
-version = "4.19.0"
+version = "4.19.1"
 description = "An implementation of JSON Schema validation for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "jsonschema-4.19.0-py3-none-any.whl", hash = "sha256:043dc26a3845ff09d20e4420d6012a9c91c9aa8999fa184e7efcfeccb41e32cb"},
-    {file = "jsonschema-4.19.0.tar.gz", hash = "sha256:6e1e7569ac13be8139b2dd2c21a55d350066ee3f80df06c608b398cdc6f30e8f"},
+    {file = "jsonschema-4.19.1-py3-none-any.whl", hash = "sha256:cd5f1f9ed9444e554b38ba003af06c0a8c2868131e56bfbef0550fb450c0330e"},
+    {file = "jsonschema-4.19.1.tar.gz", hash = "sha256:ec84cc37cfa703ef7cd4928db24f9cb31428a5d0fa77747b8b51a847458e0bbf"},
 ]
 
 [package.dependencies]
@@ -915,13 +898,13 @@ referencing = ">=0.28.0"
 
 [[package]]
 name = "kubernetes"
-version = "27.2.0"
+version = "28.1.0"
 description = "Kubernetes python client"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "kubernetes-27.2.0-py2.py3-none-any.whl", hash = "sha256:0f9376329c85cf07615ed6886bf9bf21eb1cbfc05e14ec7b0f74ed8153cd2815"},
-    {file = "kubernetes-27.2.0.tar.gz", hash = "sha256:d479931c6f37561dbfdf28fc5f46384b1cb8b28f9db344ed4a232ce91990825a"},
+    {file = "kubernetes-28.1.0-py2.py3-none-any.whl", hash = "sha256:10f56f8160dcb73647f15fafda268e7f60cf7dbc9f8e46d52fcd46d3beb0c18d"},
+    {file = "kubernetes-28.1.0.tar.gz", hash = "sha256:1468069a573430fb1cb5ad22876868f57977930f80a6749405da31cd6086a7e9"},
 ]
 
 [package.dependencies]
@@ -933,7 +916,7 @@ pyyaml = ">=5.4.1"
 requests = "*"
 requests-oauthlib = "*"
 six = ">=1.9.0"
-urllib3 = ">=1.24.2"
+urllib3 = ">=1.24.2,<2.0"
 websocket-client = ">=0.32.0,<0.40.0 || >0.40.0,<0.41.dev0 || >=0.43.dev0"
 
 [package.extras]
@@ -1282,53 +1265,52 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4)", "pytest-co
 
 [[package]]
 name = "prefect"
-version = "2.13.1"
+version = "2.11.3"
 description = "Workflow orchestration and management."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "prefect-2.13.1-py3-none-any.whl", hash = "sha256:319a33bd21270cfa80cb2c6e954b7325def934fbc7e5db3b2be149b0ef318e0c"},
-    {file = "prefect-2.13.1.tar.gz", hash = "sha256:60955f9dcffeeeee8e28ac7d22045d1d15cde8fb687fe9aa7d52ff7b95288079"},
+    {file = "prefect-2.11.3-py3-none-any.whl", hash = "sha256:aad9db1de0bb7a6f0a52302ad508454dedbb412090f839efc4e905c271ce5dc0"},
+    {file = "prefect-2.11.3.tar.gz", hash = "sha256:78c2a15770d821f8fc89b8fdd729bd7346d024d476fc42bf172671bcd4c7d331"},
 ]
 
 [package.dependencies]
 aiosqlite = ">=0.17.0"
-alembic = ">=1.7.5,<2.0.0"
-anyio = ">=3.4.0,<4.0.0"
-apprise = ">=1.1.0,<2.0.0"
-asgi-lifespan = ">=1.0,<3.0"
+alembic = ">=1.7.5"
+anyio = ">=3.4.0"
+apprise = ">=1.1.0"
+asgi-lifespan = ">=1.0"
 asyncpg = ">=0.23"
 click = ">=8.0,<8.2"
-cloudpickle = ">=2.0,<3.0"
-coolname = ">=1.0.4,<3.0.0"
-croniter = ">=1.0.12,<2.0.0"
+cloudpickle = ">=2.0"
+coolname = ">=1.0.4"
+croniter = ">=1.0.12"
 cryptography = ">=36.0.1"
-dateparser = ">=1.1.1,<2.0.0"
-docker = ">=4.0,<7.0"
+dateparser = ">=1.1.1"
+docker = ">=4.0"
 fastapi = ">=0.93"
 fsspec = ">=2022.5.0"
-graphviz = ">=0.20.1"
 griffe = ">=0.20.0"
 httpx = {version = ">=0.23,<0.23.2 || >0.23.2", extras = ["http2"]}
-jinja2 = ">=3.0.0,<4.0.0"
-jsonpatch = ">=1.32,<2.0"
+jinja2 = ">=3.0.0"
+jsonpatch = ">=1.32"
 jsonschema = ">=3.2.0,<5.0.0"
-kubernetes = ">=24.2.0,<28.0.0"
-orjson = ">=3.7,<4.0"
-packaging = ">=21.3,<24.3"
+kubernetes = ">=24.2.0"
+orjson = ">=3.7"
+packaging = ">=21.3"
 pathspec = ">=0.8.0"
-pendulum = ">=2.1.2,<4.0.0"
+pendulum = ">=2.1.2"
 pydantic = ">=1.10.0,<2.0.0"
-python-slugify = ">=5.0,<9.0"
-pytz = ">=2021.1,<2024"
-pyyaml = ">=5.4.1,<7.0.0"
-readchar = ">=4.0.0,<5.0.0"
-rich = ">=11.0,<14.0"
+python-slugify = ">=5.0"
+pytz = ">=2021.1"
+pyyaml = ">=5.4.1"
+readchar = ">=4.0.0"
+rich = ">=11.0"
 ruamel-yaml = ">=0.17.0"
-sqlalchemy = {version = ">=1.4.22,<1.4.33 || >1.4.33,<3.0.0", extras = ["asyncio"]}
+sqlalchemy = {version = ">=1.4.22,<1.4.33 || >1.4.33", extras = ["asyncio"]}
 toml = ">=0.10.0"
 typer = ">=0.4.2"
-typing-extensions = ">=4.1.0,<5.0.0"
+typing-extensions = ">=4.1.0"
 uvicorn = ">=0.14.0"
 websockets = ">=10.4"
 
@@ -2193,20 +2175,19 @@ devenv = ["black", "check-manifest", "flake8", "pyroma", "pytest (>=4.3)", "pyte
 
 [[package]]
 name = "urllib3"
-version = "2.0.4"
+version = "1.26.16"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 files = [
-    {file = "urllib3-2.0.4-py3-none-any.whl", hash = "sha256:de7df1803967d2c2a98e4b11bb7d6bd9210474c46e8a0401514e3a42a75ebde4"},
-    {file = "urllib3-2.0.4.tar.gz", hash = "sha256:8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"},
+    {file = "urllib3-1.26.16-py2.py3-none-any.whl", hash = "sha256:8d36afa7616d8ab714608411b4a3b13e58f463aee519024578e062e141dce20f"},
+    {file = "urllib3-1.26.16.tar.gz", hash = "sha256:8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"},
 ]
 
 [package.extras]
-brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
-secure = ["certifi", "cryptography (>=1.9)", "idna (>=2.0.0)", "pyopenssl (>=17.1.0)", "urllib3-secure-extra"]
-socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
-zstd = ["zstandard (>=0.18.0)"]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
+secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "uvicorn"
@@ -2325,4 +2306,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "9ac7ca51ff27253659cbdd0eddfbe019492f7d28379f3a3055a1dcaae92e713f"
+content-hash = "58f7f6f9f7c9b72aa669277c29dbe3272786892d76d4b3aa9fef12b1c4335b7f"
