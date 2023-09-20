@@ -9,5 +9,9 @@ async def build_dataframe_async(id, index):
 
 @flow(cache_result_in_memory=False)
 async def flow_async(id):
-    for index in range(30):
-        await build_dataframe_async(id, index)
+    a = []
+    while True:
+        print(len(a))
+        a.append(" " * 10**6)
+    # for index in range(30):
+    #    await build_dataframe_async(id, index)
