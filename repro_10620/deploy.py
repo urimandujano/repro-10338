@@ -12,7 +12,7 @@ deployment = Deployment.build_from_flow(
     work_queue_name="repo-10620-queue",
     work_pool_name="repro-10620",
     storage=load_or_create_github_block(),
-    infrastructure=load_or_create_k8s_job(),
+    infrastructure=load_or_create_k8s_job(overwrite=True),
     apply=True,
 )
 deployment.apply()

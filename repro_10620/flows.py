@@ -14,8 +14,8 @@ async def some_task(id, index):
 @flow(cache_result_in_memory=False)
 async def k8s_job_flow(id):
     a = []
-    while True:
-        print(len(a))
+    for i in range(6000):
+        print(len(a), i)
         a.append(" " * 10**6)
     # for index in range(30):
     #    await build_dataframe_async(id, index)
